@@ -4,6 +4,7 @@ function main(parkingLot) {
     
     checkin.addEventListener('click', () => {
         try {
+            alert(parkingLot.getDescription());
             const licensePlate = prompt('Nummerplade?');
             if (licensePlate) {
                 parkingLot.checkin(licensePlate);
@@ -16,7 +17,6 @@ function main(parkingLot) {
 
     checkout.addEventListener('click', () => {
         try {
-            alert(parkingLot.getDescription());
             const licensePlate = prompt('Nummerplade?');
             const price = parkingLot.checkout(licensePlate);
 

@@ -1,11 +1,18 @@
-function calculateBilkaPrice(from, to) {
-    const time = (to - from) / 1000;
-    return 10 * (Math.floor(time/15) + 1);
+class BilkaPriceStrategy {
+    getDescription() {
+        return "";
+    }
+
+    calculatePrice(from, to) {
+        return 0;
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const parkingLot = new ParkingLot(calculateBilkaPrice);
+// function calculateBilkaPrice(from, to) {
+//     const time = (to - from) / 1000;
+//     return 10 * (Math.floor(time/15) + 1);
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
-    main(new ParkingLot());
+    main(new ParkingLot(new BilkaPriceStrategy()));
 });
