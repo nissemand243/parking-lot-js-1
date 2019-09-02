@@ -105,8 +105,9 @@ Vi vil gerne skrive en besked til vores kunder om hvordan prisen bliver beregnet
 ParkingLot.js
 ```javascript
 
-// calculatePrice er en funktion der tager checkinTime og checkoutTime
-// og returnerer prisen for den givne periode.
+// priceStrategy indeholder
+// - calculatePrice(from, to) som beregner prisen for en parkering
+// - getDescription() som returnere en dansk tekst for parkeringen
 constructor(priceStrategy) {
     this.priceStrategy = priceStrategy;
 }
@@ -133,7 +134,7 @@ class FotexPriceStrategy {
         return "Velkommen til Føtex. Det koster 15 kr pr påbegyndt kvarter at parkere her.";
     }
 
-    calculateFotexPrice(checkinTime, checkoutTime) {
+    calculatePrice(checkinTime, checkoutTime) {
         const time = (checkoutTime - checkinTime) / 1000;
         return 15 * (Math.floor(time/15) + 1);
     }
