@@ -8,7 +8,6 @@ class FotexPriceStrategy {
         return 15 * (Math.floor(time/15) + 1);
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     main(new ParkingLot(new FotexPriceStrategy()));
 });
