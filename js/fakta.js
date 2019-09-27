@@ -18,4 +18,5 @@ class FaktaPriceStrategy {
 
 document.addEventListener('DOMContentLoaded', () => {
     main(new ParkingLot(new FaktaPriceStrategy()));
+
 });
