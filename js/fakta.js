@@ -4,17 +4,14 @@ class FaktaPriceStrategy {
     }
 
     calculatePrice(from, to) {
-        return 0;
+       const time = ((to - from) / 1000) - 5;
+       if (time < 0) {
+           return 0;
+       } else {
+           return 20 * (Math.floor(time/15) + 1);
+       }
     }
 }
-// function calculateFaktaPrice(from, to) {
-//     const time = ((to - from) / 1000) - 5;
-//     if (time < 0) {
-//         return 0;
-//     } else {
-//         return 20 * (Math.floor(time/15) + 1);
-//     }
-// }
 
 document.addEventListener('DOMContentLoaded', () => {
     main(new ParkingLot(new FaktaPriceStrategy()));

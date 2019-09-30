@@ -1,6 +1,6 @@
 function openGate(gate) {
     gate.classList.add('open');
-    setTimeout(() => gate.classList.remove('open'), 5000); 
+    setTimeout(() => gate.classList.remove('open'), 3000); 
 }
 
 class ParkingLot {
@@ -24,6 +24,7 @@ class ParkingLot {
             this.checkedInCars[licensePlate] = new Date();
             openGate(this.entranceGate);
         }
+        console.log(this.checkedInCars);
     }
 
     checkout(licensePlate) {
@@ -35,8 +36,10 @@ class ParkingLot {
 
             const price = this.priceStrategy.calculatePrice(checkinTime, checkoutTime);
             this.checkedInCars[licensePlate] = price;
+            console.log(this.checkedInCars);
             return this.checkedInCars[licensePlate];
         }
+
     }
 
     pay(licensePlate, amount) {
@@ -50,6 +53,7 @@ class ParkingLot {
                 delete this.checkedInCars[licensePlate];
 
                 openGate(this.exitGate);
+                console.log(this.checkedInCars);
 
                 return exchange;
             }
