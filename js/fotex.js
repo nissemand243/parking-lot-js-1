@@ -9,5 +9,5 @@ class FotexPriceStrategy {
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
-    main(new ParkingLot(new FotexPriceStrategy()));
+    main(new ParkingLot(new KinaStrategi()));
 });
