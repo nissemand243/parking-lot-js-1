@@ -15,18 +15,25 @@ class LoggingParkingLotDecorator {
     
     getDescription() {
         return this.parkingLot.getDescription();
+        console.log(getDescription);
     }
 
     checkin(licensePlate) {
-        return this.parkingLot.checkin(licensePlate);
+        const resultat = this.parkingLot.checkin(licensePlate);
+        console.log(licensePlate + " er ankommet");
+        return resultat;
     }
 
     checkout(licensePlate) {
-        return this.parkingLot.checkout(licensePlate);
+        const resolve = this.parkingLot.checkout(licensePlate);
+        console.log(licensePlate + " er lige kørt sin vej");
+        return resolve;
     }
 
     pay(licensePlate, amount) {
-        return this.parkingLot.pay(licensePlate, amount);
+        const supper = this.parkingLot.pay(licensePlate, amount);
+        console.log(licensePlate + " har lige betalt " + amount + " kr for parkering, tak for dine oplysninger");
+        return supper;
     }
 }
 
